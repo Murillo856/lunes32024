@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Semana2</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            *{
+                color:red; /* GENERAL */
+            }
+            h1{
+                color: blue;/* ETIQUETA */
+            }
+            .titulo{
+                font-size: 20px;/* CLASE */
+            }
+
+            #descripcion{
+                font-style: italic;/* ID */
+            }
+            .contenido {
+                color: green;
+            }
+
+            .enlace {
+                color: blue;
+                text-decoration: none;
+            }
+
+            .enlace[target="_blank"] {
+                font-weight: bold
+            }
+
+            .enlace[title] {
+                text-decoration: underline;
+            }
+            .h1  p {
+                color: blue;
+            }
+
+
+
+        </style>
+    </head>
+    <body>
+        <!--Selectores basicos-->
+        <h1 class="titulo">Titulo</h1>
+        <p id="descripcion">descripcion</p>
+        <p class="contenido"> contenido</p>
+
+        <!--Selectores atributo-->
+
+        <a href="#" class="enlace">Enlace 1</a>
+        <a href="#" class="enlace" target="_blank">Enlace 2(fuera de la pestanna)</a>
+        <a href="#" class="enlace" title="Un enlace mas">Enlace 3</a>
+
+        <div class="padre1">
+            <p>
+                parrafo1
+            </p>
+            <p>
+                parrafo2
+            </p>
+            <p>
+                parrafo3
+            </p>
+
+            <div class="padre2">
+                <p>
+                    parrafo1
+                </p>
+                <p>
+                    parrafo2
+                </p>
+                <p>
+                    parrafo3
+                </p>
+            </div>
+        </div>
+
+
+    </body>
+</html>
+
