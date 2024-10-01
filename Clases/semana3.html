@@ -1,59 +1,119 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Semana2</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            *{
-                color:red; /* GENERAL */
-            }
-            h1{
-                color: blue;/* ETIQUETA */
-            }
-            .titulo{
-                font-size: 20px;/* CLASE */
-            }
 
-            #descripcion{
-                font-style: italic;/* ID */
-            }
-            .contenido {
-                color: green;
-            }
+<head>
+    <title>Semana2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            color: red;
+            /* GENERAL */
+        }
 
-            .enlace {
-                color: blue;
-                text-decoration: none;
-            }
+        h1 {
+            color: blue;
+            /* ETIQUETA */
+        }
 
-            .enlace[target="_blank"] {
-                font-weight: bold
-            }
+        .titulo {
+            font-size: 20px;
+            /* CLASE */
+        }
 
-            .enlace[title] {
-                text-decoration: underline;
-            }
-            .h1  p {
-                color: blue;
-            }
+        #descripcion {
+            font-style: italic;
+            /* ID */
+        }
 
+        .contenido {
+            color: green;
+        }
 
+        .enlace {
+            color: blue;
+            text-decoration: none;
+        }
 
-        </style>
-    </head>
-    <body>
-        <!--Selectores basicos-->
-        <h1 class="titulo">Titulo</h1>
-        <p id="descripcion">descripcion</p>
-        <p class="contenido"> contenido</p>
+        .enlace[target="_blank"] {
+            font-weight: bold
+        }
 
-        <!--Selectores atributo-->
+        .enlace[title] {
+            text-decoration: underline;
+        }
 
-        <a href="#" class="enlace">Enlace 1</a>
-        <a href="#" class="enlace" target="_blank">Enlace 2(fuera de la pestanna)</a>
-        <a href="#" class="enlace" title="Un enlace mas">Enlace 3</a>
+        .padre1+p {
+            color: magenta;
+        }
 
-        <div class="padre1">
+        #contenido {
+            padding: 15px;
+            margin: 10px;
+            border: 1px solid green;
+            width: 300px;
+            height: 100px;
+            background-color: blueviolet;
+        }
+
+        #contenido p {
+            color: beige;
+        }
+
+        .contenedor-flex {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            background-color: aqua;
+            padding: 20px;
+        }
+
+        .item {
+            background-color: lightcoral;
+            padding: 20px;
+            margin: 5px;
+            border: 1px solid coral;
+        }
+
+        .contenedor-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            margin: 5px;
+            gap: 20px;
+        }
+
+        .item-grid{
+            background-color: aquamarine;
+            padding: 20px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Selectores basicos-->
+    <h1 class="titulo">Titulo</h1>
+    <p id="descripcion">descripcion</p>
+    <p class="contenido"> contenido</p>
+
+    <!--Selectores atributo-->
+
+    <a href="#" class="enlace">Enlace 1</a>
+    <a href="#" class="enlace" target="_blank">Enlace 2(fuera de la pestanna)</a>
+    <a href="#" class="enlace" title="Un enlace mas">Enlace 3</a>
+    <!--Selectores Hijos-->
+
+    <div class="padre1">
+        <p>
+            parrafo1
+        </p>
+        <p>
+            parrafo2
+        </p>
+        <p>
+            parrafo3
+        </p>
+
+        <div class="padre2">
             <p>
                 parrafo1
             </p>
@@ -63,21 +123,41 @@
             <p>
                 parrafo3
             </p>
-
-            <div class="padre2">
-                <p>
-                    parrafo1
-                </p>
-                <p>
-                    parrafo2
-                </p>
-                <p>
-                    parrafo3
-                </p>
-            </div>
         </div>
+    </div>
+    <p>
+        parrafo1
+    </p>
+    <p>
+        parrafo2
+    </p>
+    <p>
+        parrafo3
+    </p>
+    <!--Modelo de caja-->
+    <div id="contenido">
+        <p>Parrafo</p>
+    </div>
+    <!--Flexbox-->
+    <div class="contenedor-flex">
+        <div class="item">Elemento1</div>
+        <div class="item">Elemento2</div>
+        <div class="item">Elemento3</div>
+    </div>
 
+    <!--GRID-->
+    <div class="contenedor-grid">
+        <div class="item-grid">Elemento1</div>
+        <div class="item-grid">Elemento2</div>
+        <div class="item-grid">Elemento3</div>
+        <div class="item-grid">Elemento4</div>
+        <div class="item-grid">Elemento3</div>
+        <div class="item-grid">Elemento4</div>
+        <div class="item-grid">Elemento3</div>
+        <div class="item-grid">Elemento4</div>
+        <div class="item-grid">Elemento3</div>
+        <div class="item-grid">Elemento4</div>
+    </div>
+</body>
 
-    </body>
 </html>
-
