@@ -123,3 +123,9 @@ document.getElementById("miBoton").addEventListener("click",function(){
     console.log(contador);
     document.getElementById("saludo").appendChild(nuevoElemento);
 });
+
+document.getElementById("miBoton2").addEventListener("click",function(){
+    let salario = document.getElementById("salarioBruto").value;
+    document.getElementById("calculoSalarioNeto").innerHTML = "Salario neto total : " + 4000;
+    console.log(salario);
+});
