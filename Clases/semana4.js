@@ -92,3 +92,34 @@ while(edad <= 50){
     console.log(edad);
     edad++;
 }
+
+function multiplicar(a,b){
+    return a*b;
+}
+
+function saludar(){
+    console.log("Hola!");
+}
+
+let totalMultiplicar = multiplicar(4,4);
+console.log(totalMultiplicar);
+console.log(multiplicar(4,5))
+saludar();
+
+
+let p = document.getElementById("saludo");
+console.log(p);
+p.innerHTML = "Hola de nuevo mundo!";
+
+let nuevoElemento = document.createElement("p");
+nuevoElemento.innerHTML = "Este elemento es nuevo";
+
+document.body.appendChild(nuevoElemento);
+let contador = 0;
+document.getElementById("miBoton").addEventListener("click",function(){
+    contador++;
+    let nuevoElemento = document.createElement("p");
+    nuevoElemento.innerHTML = "Contador de clicks: "+contador;
+    console.log(contador);
+    document.getElementById("saludo").appendChild(nuevoElemento);
+});
