@@ -66,7 +66,21 @@
         echo "Es una fruta que no es manzana<br>";
     }
 
+    $contador = 5;
 
+    while($contador <= 5){
+        echo "Contador es: ".$contador."<br>";
+        $contador++;
+    }
+
+    do {
+        echo "Contador es: ".$contador."<br>";
+        $contador++;
+    } while($contador <= 5);
+
+    for($i = 0; $i< 20; $i++){
+        echo "Contador es: ".$i."<br>";
+    }
 ?>
 </body>
 </html>
