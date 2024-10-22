@@ -17,7 +17,56 @@
     $nombre = "Karol ";
     $edad = 34;
 
-    echo "Mi nombre es ".$nombre." , mi edad es de ".$edad;
+    echo "Mi nombre es ".$nombre." , mi edad es de ".$edad."<br>";
+
+    $valor = 5;
+    $valor2 = "5";
+    echo "------------  == o === ??????? -------------------<br> ";
+    if($valor == $valor2){
+        echo "El valor de las variables son iguales"."<br>";
+    }
+
+    if($valor === $valor2){
+        echo "El valor y el tipo de datos de las variables son iguales"."<br>";
+    } else {
+        echo "El valor o el tipo de datos de las variables no son iguales"."<br>";
+    }
+    echo "------------  != o !== ??????? -------------------<br> ";
+    if($valor != $valor2){
+        echo "El valor de las variables son diferentes"."<br>";
+    }
+
+    if($valor !== $valor2){
+        echo "El valor o el tipo de datos de las variables son diferentes"."<br>";
+    } else {
+        echo "El valor y el tipo de datos de las variables son iguales"."<br>";
+    }
+    echo "------------ > o < o <= o >= -------------------<br> ";
+    $edad = 10;
+    if($edad >= 18){
+        echo "Es un adulto <br>";
+    } else {
+        echo "Es menor de edad <br>";
+    }
+
+    echo "------------ && o ||  -------------------<br> ";
+
+    $fruta = "pera";
+    $esFruta = true;
+
+    if($fruta == "manzana" && $esFruta){ // false X
+        echo "Es una fruta de manzana<br>";
+    }
+
+    if(($fruta == "manzana" && $esFruta) || $fruta == "pera"){
+        echo "Es una manzana fruta o es pera<br>";
+    }
+
+    if(!($fruta == "manzana")){ // F  -> T
+        echo "Es una fruta que no es manzana<br>";
+    }
+
+
 ?>
 </body>
 </html>
