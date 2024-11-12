@@ -122,10 +122,51 @@
 
     if($conn->connect_error){
         die("Conexio fallida");
+    } else {
+        echo "conexion perfecta";
     }
 
 
-    
+
+    // INSERT -> Create CRUD
+    /*
+    $query = "INSERT INTO usuario(nombre, usuario, clave, rol) VALUES ('Karol Leal','kleal','12345','admin')";
+
+    if($conn->query($query) ==  TRUE){
+        echo "Registro guardado exitosamente <br>";
+    } else {
+        echo "Error al agregar registro <br>";
+        
+    }
+*/
+    // select -> READ CRUD
+    $sql = "SELECT * FROM usuario WHERE 1";
+    $result = $conn->query($sql);
+
+    if($result->num_rows > 0){
+        while($row = $result->fetch_assoc()){
+            echo "ID: ".$row["id"]. "nombre: ".$row["nombre"]. "usuario: ".$row["usuario"]. "rol: ".$row["rol"]."<br>";
+        }
+    }
+    // Update -> update CRUD
+    $query = "UPDATE usuario SET nombre='Karol Leal R' WHERE id = 1";
+
+    if($conn->query($query) ==  TRUE){
+        echo "update  exitosamente <br>";
+    } else {
+        echo "Error al actualizar registro <br>";
+        
+    }
+
+        // delete -> delete CRUD
+        $query = "delete from usuario WHERE id = 2";
+
+        if($conn->query($query) ==  TRUE){
+            echo "delete  exitosamente <br>";
+        } else {
+            echo "Error al borrar registro <br>";
+            
+        }
     ?>
 </body>
 
