@@ -167,6 +167,24 @@
             echo "Error al borrar registro <br>";
             
         }
+
+        echo "<br>--------------------- HASHING ----------------------------------<br>"; 
+
+        $clave = "12345";
+
+        $clave_encriptada = password_hash($clave,PASSWORD_BCRYPT);
+
+        //echo $clave_encriptada;
+
+        //$2y$10$.7FhzNHneSYYFhOfn3XQ2.bgzNp3EjxYZ/RI7j9jL3bj96q3ILOle
+        //$2y$10$DlkZYD1fZeVXfykIJkAZZe/hNCaAqg0AQGaK4K48gZZwWNRh5TbPu
+        //$2y$10$GozJHpJcWrZH0aplQM6Dzu66o3gwCnkSJnvxB3qdGXfG/2xQNUUbS
+
+        if(password_verify($clave, '$2y$10$DlkZYD1fZeVXfykIJkAZZe/hNCaAqg0AQGaK4K48gZZwWNRh5TbPu4' )){
+            echo "si es lo mismo";
+        } else {
+           echo  "no es lo mismo";
+        }
     ?>
 </body>
 
