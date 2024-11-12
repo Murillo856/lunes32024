@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <!-- Meta de responsive -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matricula en linea</title>
-    <!-- Favicon icon -->
-    <!-- Archivos estilos y el de javascript-->
-    <link href="./css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="./js/bootstrap.bundle.min.js integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
+<?php 
+include("head.php")
+?>
 
 <body>
     <!--Encabezados-->
     <header>
-        <nav>
-            <ul class="menu">
-                <li class="menu-item"><a href="index.html">Inicio</a></li>
-                <li class="menu-item"><a href="#">Informacion</a></li>
-                <li class="menu-item"><a href="#">Matricula</a></li>
-                <li class="menu-item"><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
+        <?php include("menu.php") ?>
+        <?php 
+
+            if(!empty($_SESSION)){
+                echo "<h1>Hola, ".$_SESSION["username"];
+            }
+
+        ?>
         <h1>Bienvenidos a la Matricula en Linea de Aserri</h1>
         <p>La mejor opcion para registrar a sus hijos en nuestra escuela.</p>
     </header>
@@ -73,11 +66,7 @@
         </section>
     </main>
 
-
-    <footer>
-        <p>&copy; 2024 Ambiente Cliente  Web  Servidor - Todos los derechos reservados</p>
-        <p><a href="privacidad.html">Politica de privacidad</a> | <a href="terminos.html">Terminos y condiciones</a></p>
-    </footer>
+    <?php include("footer.php") ?>
 
 </body>
 
