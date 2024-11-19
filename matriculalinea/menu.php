@@ -8,6 +8,7 @@ if(!empty($_SESSION)){
         ["label" => "Informacion", "url" => "#"],
         ["label" => "Matricula", "url" => "#"],
         ["label" => "Contactos", "url" => "contact.php"],
+        ["label" => "Materiales", "url" => "util.php"],
         ["label" => "Login", "url" => " login.php"],
     ];
    } else {
@@ -16,6 +17,7 @@ if(!empty($_SESSION)){
         ["label" => "Informacion", "url" => "#"],
         ["label" => "Matricula", "url" => "#"],
         ["label" => "Contactos", "url" => "contact.php"],
+        ["label" => "Materiales", "url" => "util.php"],
         ["label" => "Login", "url" => " login.php"],
     ];
    }

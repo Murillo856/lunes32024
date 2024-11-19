@@ -31,25 +31,25 @@ header p {
     display: flex;
     justify-content: center;
     padding: 10px;
-    background-color: #007BFF; 
+    background-color: #007BFF;
     border-radius: 5px;
 }
 
 .menu-item {
-    margin: 0 15px; 
+    margin: 0 15px;
 }
 
 .menu-item a {
     color: white;
-    text-decoration: none; 
-    padding: 10px 15px; 
+    text-decoration: none;
+    padding: 10px 15px;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .menu-item a:hover {
-    background-color: #0056b3; 
-    color: #f4f4f4; 
+    background-color: #0056b3;
+    color: #f4f4f4;
 }
 
 main {
@@ -84,7 +84,8 @@ table {
     border-collapse: collapse;
 }
 
-table th, table td {
+table th,
+table td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
@@ -115,3 +116,22 @@ footer a:hover {
     text-decoration: underline;
 }
 
+
+.product {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.img-util {
+    width: 200px;
+    height: auto;
+}
+
+.select-util {
+    margin: 20px;
+}
+
+#price {
+    font-size: 1.5em;
+    color: green;
+}
