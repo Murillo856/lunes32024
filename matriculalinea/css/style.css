@@ -135,3 +135,77 @@ footer a:hover {
     font-size: 1.5em;
     color: green;
 }
+
+
+
+.form-container {
+    background-color: #ffffff;
+    padding: 25px 35px;
+}
+
+form h2 {
+    margin-bottom: 20px;
+    color: #444;
+    font-size: 22px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #666;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+}
+
+textarea {
+    resize: none;
+}
+
+button {
+    width: 100%;
+    margin: 12px;
+    padding: 12px;
+    background-color: #007BFF;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+.error-message {
+    color: #e74c3c;
+    font-size: 12px;
+    display: none;
+    margin-top: 5px;
+}
+
+input.error, textarea.error {
+    border-color: #e74c3c;
+}
