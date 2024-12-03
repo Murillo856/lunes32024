@@ -7,6 +7,7 @@ if(!empty($_SESSION)){
         ["label" => "Inicio", "url" => "index.php"],
         ["label" => "Informacion", "url" => "information.php"],
         ["url" => "listRegistration.php", "label" => "Listado de estudiantes"],
+        ["url" => "listTeacher.php", "label" => "Listado de profesores"],
         ["url" => "registration.php", "label" => "Matricula"],
         ["label" => "Contactos", "url" => "contact.php"],
         ["label" => "Materiales", "url" => "util.php"],

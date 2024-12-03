@@ -16,7 +16,7 @@ $(function () {
 
     $('#contactForm').on('submit', function (e) {
         e.preventDefault();
-        
+
         let isValid = true;
 
         if ($('#contact').val().trim() === '') {
@@ -56,8 +56,31 @@ $(function () {
         }
 
         if (isValid) {
-            alert('Formulario enviado correctamente.');
-            $(this).unbind('submit').submit();
+            // alert('Formulario enviado correctamente.');
+            //$(this).unbind('submit').submit();
+            // $(this).unbind('submit').submit();
+            fetch('procesar_contact.php', {
+                method: 'post',
+                headers: {
+                    "Content-Type": 'application/json'
+                },
+                body: JSON.stringify({
+                    contact: $('#contact').val(),
+                    email: $('#email').val(),
+                    subject: $('#subject').val(),
+                    message: $('#message').val()
+                })
+            }).then(response => response.json())
+                .then(data => {
+                    alert(data.message)
+                    if (data.status == "00") {
+                        $('#contact').val("");
+                        $('#email').val("");
+                        $('#subject').val("");
+                        $('#message').val("");
+                    }
+                })
+                .catch(error => console.log(error));
         }
     });
 
@@ -111,13 +134,73 @@ $(function () {
         }
     });
     $('.price').hide();
-    $(".image-price").on("click", function(){
+    $(".image-price").on("click", function () {
         $(this).find(".price").fadeIn();
     });
 
-    $(".image-price").on("mouseleave", function(){
+    $(".image-price").on("mouseleave", function () {
         $(this).find(".price").fadeOut();
     });
+
+
+    $('#error-name').hide();
+
+    $('#teacherForm').on('submit', function (e) {
+        e.preventDefault();
+        let isValid = true;
+
+        if ($('#name').val().trim() === '') {
+            $('#name').addClass('error');
+            $('#error-name').show();
+            isValid = false;
+        } else {
+            $('#name').removeClass('error');
+            $('#error-name').hide();
+        }
+
+        if (isValid) {
+            fetch('teachers.php', {
+                method: 'post',
+                headers: {
+                    "Content-Type": 'application/json'
+                },
+                body: JSON.stringify({
+                    action: 'add',
+                    name: $('#name').val().trim()
+                })
+            }).then(response => response.json())
+                .then(data => {
+                    if(data.status == '00'){
+                        $('#name').val("");
+                        $('#listTeachers').append("<tr><td>"+data.name+"</td></tr>");
+                    }
+                    alert(data.message)
+                })
+                .catch(error => console.log(error));
+        }
+    });
+
+    getTeachers();
+
+    function getTeachers(){
+        fetch('teachers.php', {
+            method: 'post',
+            headers: {
+                "Content-Type": 'application/json'
+            },
+            body: JSON.stringify({
+                action: 'get',
+            })
+        }).then(response => response.json())
+            .then(data => {
+                if(data.status == '00'){
+                    data.teachers.forEach((element) => {
+                        $('#listTeachers').append("<tr><td>"+element.name+"</td></tr>");
+                    });
+                }
+            })
+            .catch(error => console.log(error));
+    }
 });
 
 

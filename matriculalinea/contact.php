@@ -11,7 +11,7 @@ include("head.php")
     </header>
     <main>
         <section>
-            <form action="procesar_contacto.php" method="post" id="contactForm">
+            <form  method="post" id="contactForm">
                 <h2>Contacto</h2>
                 <div class="form-group">
                     <label for="contact">Nombre de Contacto</label>
