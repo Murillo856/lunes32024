@@ -60,6 +60,64 @@ $(function () {
             $(this).unbind('submit').submit();
         }
     });
+
+    $('#error-name').hide();
+    $('#error-age').hide();
+    $('#error-grade').hide();
+    $('#error-file').hide();
+
+    $('#registrationForm').on('submit', function (e) {
+        e.preventDefault();
+        let isValid = true;
+
+        if ($('#name').val().trim() === '') {
+            $('#name').addClass('error');
+            $('#error-name').show();
+            isValid = false;
+        } else {
+            $('#name').removeClass('error');
+            $('#error-name').hide();
+        }
+
+        if ($('#age').val().trim() === '') {
+            $('#age').addClass('error');
+            $('#error-age').show();
+            isValid = false;
+        } else {
+            $('#age').removeClass('error');
+            $('#error-age').hide();
+        }
+
+        if ($('#grade').val().trim() === '') {
+            $('#grade').addClass('error');
+            $('#error-grade').show();
+            isValid = false;
+        } else {
+            $('#grade').removeClass('error');
+            $('#error-grade').hide();
+        }
+
+        if ($('#file').val().trim() === '') {
+            $('#file').addClass('error');
+            $('#error-file').show();
+            isValid = false;
+        } else {
+            $('#file').removeClass('error');
+            $('#error-file').hide();
+        }
+
+        if (isValid) {
+            $(this).unbind('submit').submit();
+        }
+    });
+    $('.price').hide();
+    $(".image-price").on("click", function(){
+        $(this).find(".price").fadeIn();
+    });
+
+    $(".image-price").on("mouseleave", function(){
+        $(this).find(".price").fadeOut();
+    });
 });
 
 

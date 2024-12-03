@@ -5,27 +5,31 @@ if(!empty($_SESSION)){
    if($_SESSION["rol"] == "admin"){
     $menu = [
         ["label" => "Inicio", "url" => "index.php"],
-        ["label" => "Informacion", "url" => "#"],
-        ["label" => "Matricula", "url" => "#"],
+        ["label" => "Informacion", "url" => "information.php"],
+        ["url" => "listRegistration.php", "label" => "Listado de estudiantes"],
+        ["url" => "registration.php", "label" => "Matricula"],
         ["label" => "Contactos", "url" => "contact.php"],
         ["label" => "Materiales", "url" => "util.php"],
         ["label" => "Login", "url" => " login.php"],
+        ["url" => "logout.php", "label" => "Salir"]
     ];
    } else {
         $menu = [
         ["label" => "Inicio", "url" => "index.php"],
-        ["label" => "Informacion", "url" => "#"],
-        ["label" => "Matricula", "url" => "#"],
+        ["label" => "Informacion", "url" => "information.php"],
+        ["url" => "registration.php", "title" => "Matricula"],
         ["label" => "Contactos", "url" => "contact.php"],
         ["label" => "Materiales", "url" => "util.php"],
         ["label" => "Login", "url" => " login.php"],
+        ["url" => "logout.php", "label" => "Salir"]
     ];
    }
 } else {
     $menu = [
         ["label" => "Inicio", "url" => "index.php"],
-        ["label" => "Informacion", "url" => "#"],
+        ["label" => "Informacion", "url" => "information.php"],
         ["label" => "Matricula", "url" => "#"],
+        ["url" => "registration.php", "label" => "Matricula"],
         ["label" => "Contactos", "url" => "contact.php"],
         ["label" => "Materiales", "url" => "util.php"],
         ["label" => "Login", "url" => " login.php"],
